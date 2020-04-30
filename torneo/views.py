@@ -34,10 +34,13 @@ def equipoCapitan(request):
         return render(request,'torneo/equipoCapitan.html',{'capitan':capitan,'fase':faseDeGrupos})
 
 def administrador(request):
-    path = request.GET.get("path")
-    print(path)
-    exec(path)
-    return HttpResponse(path)
+    jugador = request.GET.get("jugadorCarnet")
+    print(jugador)
+    if(len(jugador)==7):
+        exec("Integrante.objects.get(carne="+jugador+")")
+    else:
+        exec(jugador)
+    return HttpResponse(jugador)
    
 def fotos(request):
     return HttpResponse("Estamos en consutruccion")

@@ -25,7 +25,7 @@ SECRET_KEY = 'k852k$(wb9*-b8na&@$sfs8lxx_=16*we907!0!s_la$5r(7#@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.31.42.60','loadbalancertorneo-1508627997.us-east-1.elb.amazonaws.com','loadbalancertorneo-156493269.us-east-1.elb.amazonaws.com']
+ALLOWED_HOSTS = ['172.31.83.149','torneosistemas-1150216550.us-east-1.elb.amazonaws.com']
 
 
 # Application definition
